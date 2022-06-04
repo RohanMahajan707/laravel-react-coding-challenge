@@ -63,4 +63,11 @@ Steps to follow after cloning this repository
 * npm run dev
 * php artisan serve
 
+**For Login As Admin**
+Email : coding-admin@yopmail.com
+password: password
+
+**For Login As New User**
+You can register first
+
 Please let me know if you have any questions, Thanks

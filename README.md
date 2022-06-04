@@ -50,7 +50,7 @@ Here’s their invitation link again:
 
 
 
-**Challenge Completed**
+**Challenge Completed by Rohan Mahajan**
 
 Steps to follow after cloning this repository
 

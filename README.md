@@ -49,8 +49,9 @@ Here’s their invitation link again:
 <referral_link>
 
 
+## Challenge Completed
 
-**Challenge Completed by Rohan Mahajan**
+**By Rohan Mahajan**
 
 Steps to follow after cloning this repository
 

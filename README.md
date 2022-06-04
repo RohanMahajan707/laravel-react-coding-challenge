@@ -74,6 +74,6 @@ password: password
 You can register first
 
 
-**Please fill out mail credentials under .env as it does involves mail sending**
+**Please fill out mail credentials under .env as this application involves mail sending under Referrals section**
 
 Please let me know if you have any questions, Thanks

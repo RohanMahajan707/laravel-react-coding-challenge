@@ -60,7 +60,8 @@ Steps to follow after cloning this repository
 * php artisan key:generate
 * php artisan migrate
 * php artisan db:seed
-* npm run dev
+* npm install --legacy-peer-deps 
+* npm run watch
 * php artisan serve
 
 **For Login As Admin**

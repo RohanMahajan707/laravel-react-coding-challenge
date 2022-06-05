@@ -8,6 +8,8 @@ import '../../css/referral.css';
 function Referrals() {
     const referalCode = register_url + '?refer=' + code;
     const [copyText, setCopyText] = useState("Copy Link");
+    const [sendText, setSendText] = useState("Send");
+    const [sendDisabled, setSendDisabled] = useState(true);
     const [inviteEmail, setInviteEmail] = useState([]);
     const [formError, setFormError] = useState('');
     const [formSuccess, setFormSuccess] = useState('');
@@ -25,19 +27,26 @@ function Referrals() {
             return false;
         }
 
+        setSendText('Please Wait..')
+        setSendDisabled(true)
+
         //insert invites
         axios.post('/invites', {
             emailList: inviteEmail,
         }).then(function (response) {
             if (response.data.status == true) {
-                setFormError('');
-                setFormSuccess(response.data.message);
+                setFormError('')
+                setFormSuccess(response.data.message)
                 setInviteEmail([])
+                setSendDisabled(true)
             }
             else {
-                setFormError(response.data.message);
-                setFormSuccess('');
+                setFormError(response.data.message)
+                setFormSuccess('')
+                setSendDisabled(false)
             }
+            setSendText('Send')
+
         }).catch(function (error) {
             console.log(error)
         });
@@ -69,6 +78,11 @@ function Referrals() {
                                         onChange={(_emails) => {
                                             setFormError('');
                                             setInviteEmail(_emails);
+
+                                            if (_emails.length > 0)
+                                                setSendDisabled(false)
+                                            else
+                                                setSendDisabled(true)
                                         }}
                                         getLabel={(email, index, removeEmail) => {
                                             return (
@@ -85,7 +99,7 @@ function Referrals() {
                                     <span className="text-danger">{formError}</span>
                                     <span className="text-success">{formSuccess}</span>
                                 </div>
-                                <button className='btn btn-primary btn-sm'>Send</button>
+                                <button className='btn btn-primary btn-sm' disabled={sendDisabled}>{sendText}</button>
                             </form>
                         </div>
                     </div>

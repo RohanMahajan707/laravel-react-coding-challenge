@@ -5,3 +5,7 @@
     padding: 10px 50px 10px 5px; 
     margin-right:10px;
 }
+
+.react-multi-email > input {
+    width: 100% !important;
+}
